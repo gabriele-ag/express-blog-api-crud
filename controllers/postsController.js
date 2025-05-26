@@ -18,6 +18,7 @@ const index = (req, res) => {
     });    
 };
 
+
 // SHOW
 const show = (req, res) => {
     const postId = req.params.id;
@@ -36,6 +37,8 @@ const show = (req, res) => {
     });
 };
 
+
+// UPDATE
 const store = (req, res) => {
     res.json({
         data: "Aggiungo un post nuovo",
@@ -50,6 +53,8 @@ const update = (req,res) => {
     });
 };
 
+
+// DELETE
 const destroy = (req, res) => {
     const postId = req.params.id
     
