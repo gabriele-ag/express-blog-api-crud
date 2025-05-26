@@ -1,22 +1,22 @@
 {
-  "name": "express-blog-routing",
+  "name": "express-blog-api-crud",
   "version": "1.0.0",
-  "description": "Esercizio express blog routing",
+  "description": "Esercizio express blog api crud",
   "main": "app.js",
   "scripts": {
     "dev": "node --watch app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gabriele-ag/express-blog-routing.git"
+    "url": "git+https://github.com/gabriele-ag/express-blog-api-crud.git"
   },
   "type": "module",
   "author": "Gabriele Ardizzone",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gabriele-ag/express-blog-routing/issues"
+    "url": "https://github.com/gabriele-ag/express-blog-api-crud/issues"
   },
-  "homepage": "https://github.com/gabriele-ag/express-blog-routing#readme",
+  "homepage": "https://github.com/gabriele-ag/express-blog-api-crud#readme",
   "dependencies": {
     "express": "^5.1.0"
   }
