@@ -1,0 +1,23 @@
+{
+  "name": "express-blog-routing",
+  "version": "1.0.0",
+  "description": "Esercizio express blog routing",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriele-ag/express-blog-routing.git"
+  },
+  "type": "module",
+  "author": "Gabriele Ardizzone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabriele-ag/express-blog-routing/issues"
+  },
+  "homepage": "https://github.com/gabriele-ag/express-blog-routing#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
