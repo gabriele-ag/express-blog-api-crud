@@ -1,6 +1,13 @@
 import {post} from "../data/data.js";
 
 
+const notFound = (res) => {
+    res.status(404)
+    res.json ({
+        error: "Post non trovato"
+    })
+}
+
 // INDEX
 const index = (req, res) => {
     const tagFilter = req.query.tags
@@ -26,10 +33,7 @@ const show = (req, res) => {
     const singlePost = post.find((curPost) => curPost.id === postId);
     
     if(singlePost === undefined) {
-        res.status(404);
-        return res.json({
-            error: "Post non trovato",
-        });
+        return notFound(res);
     };
 
     res.json ({
@@ -40,14 +44,34 @@ const show = (req, res) => {
 
 // UPDATE
 const store = (req, res) => {
+    const newPost = req.body
+    const lastId = parseInt(post[post.length - 1].id)
+
+    newPost.id = (lastId + 1).toString()
+    post.push(newPost)
+
+    console.log(newPost)
+    res.status(201)
     res.json({
-        data: "Aggiungo un post nuovo",
+        data: newPost,
     });
 };
 
 const update = (req,res) => {
 
-    const postId = req.params.id
+    const postId = req.params.id;
+    const updatedData = req.body;
+    const post = post.find(curPost => curPost.id === postId);
+
+    post.title = updatedData.title;
+    post.content = updatedData.content;
+    post.img = updatedData.img;
+    post.tags = updatedData.tags;
+
+    if (!post) {
+        return notFound(res);
+    }
+
     res.json({
         data: `Modifico il post seguente ${postId}`,
     });
@@ -61,10 +85,7 @@ const destroy = (req, res) => {
     const index = post.findIndex((curPost) => curPost.id === postId);
 
     if(index === -1) {
-        res.status(404);
-        return res.json ({
-            error: "Post non trovato",
-        });
+        return notFound(res);
     };
 
     post.splice(index, 1);
@@ -82,5 +103,6 @@ const postController = {
     update,
     destroy,
 };
+
 
 export default postController
