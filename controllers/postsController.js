@@ -42,14 +42,13 @@ const show = (req, res) => {
 };
 
 
-// UPDATE
 const store = (req, res) => {
     const newPost = req.body
     const lastId = parseInt(post[post.length - 1].id)
-
+    
     newPost.id = (lastId + 1).toString()
     post.push(newPost)
-
+    
     console.log(newPost)
     res.status(201)
     res.json({
@@ -57,6 +56,7 @@ const store = (req, res) => {
     });
 };
 
+// UPDATE
 const update = (req,res) => {
 
     const postId = req.params.id;
